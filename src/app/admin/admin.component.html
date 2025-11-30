@@ -1,0 +1,46 @@
+<h2>Admin</h2>
+
+<h3>{{ editingProduct ? 'Edit Product' : 'Add Product' }}</h3>
+<form [formGroup]="productForm" (ngSubmit)="editingProduct ? updateProduct() : addProduct()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input id="name" formControlName="name" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Price:</label>
+    <input id="price" type="number" formControlName="price" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <textarea id="description" formControlName="description" class="form-control"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="imageUrl" class="form-label">Image URL:</label>
+    <input id="imageUrl" formControlName="imageUrl" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">{{ editingProduct ? 'Update' : 'Add' }}</button>
+  <button type="button" *ngIf="editingProduct" (click)="cancelEdit()" class="btn btn-secondary ms-2">Cancel</button>
+</form>
+
+<hr>
+
+<h3>Product List</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>
+        <button (click)="editProduct(product)" class="btn btn-sm btn-primary">Edit</button>
+        <button (click)="deleteProduct(product.id)" class="btn btn-sm btn-danger ms-2">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

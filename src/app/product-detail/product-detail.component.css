@@ -1,0 +1,63 @@
+:host {
+  display: block;
+  padding: 2rem 0;
+  background: #f7fafc;
+  min-height: 100vh;
+}
+
+.row {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4299e1;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  background: #4299e1;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #3182ce;
+  transform: translateY(-2px);
+}
+
+.col-md-6 {
+  padding: 1.5rem;
+}
